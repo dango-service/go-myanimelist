@@ -18,11 +18,23 @@ func WithHTTPClient(httpClient *http.Client) ClientOption {
 }
 
 // WithBaseURL overrides the default base API URL (default: "https://api.myanimelist.net/v2").
+// If a custom base URL is supplied (e.g. in test servers), tokenURL is automatically adjusted.
 func WithBaseURL(rawURL string) ClientOption {
 	return func(c *Client) {
 		trimmed := strings.TrimRight(rawURL, "/")
 		if trimmed != "" {
 			c.baseURL = trimmed
+			c.tokenURL = trimmed + "/v1/oauth2/token"
+		}
+	}
+}
+
+// WithTokenURL overrides the OAuth2 token endpoint (default: "https://myanimelist.net/v1/oauth2/token").
+func WithTokenURL(tokenURL string) ClientOption {
+	return func(c *Client) {
+		trimmed := strings.TrimRight(tokenURL, "/")
+		if trimmed != "" {
+			c.tokenURL = trimmed
 		}
 	}
 }

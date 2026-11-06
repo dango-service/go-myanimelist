@@ -9,6 +9,9 @@ const (
 	// DefaultBaseURL is the standard MyAnimeList API v2 endpoint.
 	DefaultBaseURL = "https://api.myanimelist.net/v2"
 
+	// DefaultTokenURL is the standard OAuth2 token endpoint for MyAnimeList.
+	DefaultTokenURL = "https://myanimelist.net/v1/oauth2/token"
+
 	// DefaultUserAgent is sent with every request unless overridden.
 	DefaultUserAgent = "go-myanimelist/0.1.0"
 
@@ -20,6 +23,7 @@ const (
 type Client struct {
 	httpClient   *http.Client
 	baseURL      string
+	tokenURL     string
 	clientID     string
 	token        string
 	userAgent    string
@@ -38,6 +42,7 @@ func NewClient(clientID string, opts ...ClientOption) *Client {
 			Timeout: 30 * time.Second,
 		},
 		baseURL:      DefaultBaseURL,
+		tokenURL:     DefaultTokenURL,
 		clientID:     clientID,
 		userAgent:    DefaultUserAgent,
 		maxBodyBytes: DefaultMaxBodyBytes,

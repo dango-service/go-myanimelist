@@ -1,0 +1,28 @@
+{
+  "id": 1234567,
+  "name": "hicham",
+  "picture": "https://cdn.myanimelist.net/images/userimages/1234567.jpg",
+  "gender": "male",
+  "birthday": "2000-01-01",
+  "location": "Spain",
+  "joined_at": "2020-05-15T12:00:00Z",
+  "anime_statistics": {
+    "num_items_watching": 5,
+    "num_items_completed": 120,
+    "num_items_on_hold": 2,
+    "num_items_dropped": 1,
+    "num_items_plan_to_watch": 25,
+    "num_items": 153,
+    "num_days_watched": 45.2,
+    "num_days_watching": 2.1,
+    "num_days_completed": 40.5,
+    "num_days_on_hold": 1.0,
+    "num_days_dropped": 0.5,
+    "num_days": 44.1,
+    "num_episodes": 2650,
+    "num_times_rewatched": 3,
+    "mean_score": 8.45
+  },
+  "time_zone": "Europe/Madrid",
+  "is_supporter": false
+}
