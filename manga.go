@@ -144,7 +144,7 @@ func (in *UpdateMangaStatusInput) ToURLValues() url.Values {
 
 // Search searches for manga by title keywords.
 func (s *MangaService) Search(ctx context.Context, query string, opts ...ListOption) (*MangaList, *Response, error) {
-	trimmed := strings.TrimSpace(query)
+	trimmed := searchQuery(query)
 	if trimmed == "" {
 		return nil, nil, fmt.Errorf("mal: manga search query cannot be empty")
 	}

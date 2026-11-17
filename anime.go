@@ -87,7 +87,7 @@ type AnimeRankingList struct {
 
 // Search searches for anime by title keywords.
 func (s *AnimeService) Search(ctx context.Context, query string, opts ...ListOption) (*AnimeList, *Response, error) {
-	trimmed := strings.TrimSpace(query)
+	trimmed := searchQuery(query)
 	if trimmed == "" {
 		return nil, nil, fmt.Errorf("mal: search query cannot be empty")
 	}
